@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sondos Wagih - Research Paper</title>
+    <style>
+        :root {
+            --primary-color: #f8f9fa;
+            --secondary-color: #ffffff;
+            --accent-color: #ff7b25;
+            --light-color: #f1f1f1;
+            --dark-color: #6c757d;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+            color: #333;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .subtitle {
+            font-weight: 300;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+        
+        main {
+            flex: 1;
+            padding: 3rem 0;
+        }
+        
+        .pdf-container {
+            background: var(--secondary-color);
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 900px;
+            margin: 0 auto;
+            border: 1px solid var(--light-color);
+        }
+                
+        .pdf-header {
+            background: var(--primary-color);
+            color: #333;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--light-color);
+        }
+        
+        .pdf-title {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        
+        .download-btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .download-btn:hover {
+            background: #e06c1a;
+            transform: scale(1.05);
+        }
+        
+        .pdf-viewer {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--dark-color);
+            color: white;
+            font-size: 0.9rem;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @media (max-width: 768px) {
+            .pdf-viewer {
+                height: 400px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Sondos Wagih Research Paper</h1>
+            <p class="subtitle">By Sondos Wagih – July 2025 – FGS 2025</p>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="pdf-container">
+                <div class="pdf-header">
+                    <h2 class="pdf-title">Sondos Wagih FINAL PAPER.pdf</h2>
+                    <a href="SondosWagihFINALPAPER.pdf" class="download-btn" download>Download PDF</a>
+                </div>
+                <iframe src="SondosWagihFINALPAPER.pdf#view=fitH" class="pdf-viewer" frameborder="0"></iframe>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Sondos Wagih. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const pdfContainer = document.querySelector('.pdf-container');
+            pdfContainer.style.opacity = '0';
+            setTimeout(() => {
+                pdfContainer.style.transition = 'opacity 0.8s ease';
+                pdfContainer.style.opacity = '1';
+            }, 300);
+        });
+    </script>
+</body>
+</html>

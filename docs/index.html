@@ -28,7 +28,7 @@
         header {
             background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
             color: #333;
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             text-align: center;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
@@ -36,7 +36,9 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
+            width: 100%;
+            box-sizing: border-box;
         }
         
         h1 {
@@ -49,11 +51,12 @@
             font-weight: 300;
             margin-top: 0.5rem;
             opacity: 0.9;
+            font-size: 1rem;
         }
         
         main {
             flex: 1;
-            padding: 3rem 0;
+            padding: 2rem 0;
         }
         
         .pdf-container {
@@ -65,21 +68,26 @@
             max-width: 900px;
             margin: 0 auto;
             border: 1px solid var(--light-color);
+            width: 100%;
         }
                 
         .pdf-header {
             background: var(--primary-color);
             color: #333;
-            padding: 1rem;
+            padding: 0.8rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid var(--light-color);
+            flex-wrap: wrap;
         }
         
         .pdf-title {
             margin: 0;
             font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            width: 100%;
+            text-align: center;
         }
         
         .download-btn {
@@ -93,6 +101,8 @@
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
+            margin: 0 auto;
+            font-size: 0.9rem;
         }
         
         .download-btn:hover {
@@ -108,7 +118,7 @@
         
         footer {
             text-align: center;
-            padding: 1.5rem;
+            padding: 1.2rem;
             background: var(--dark-color);
             color: white;
             font-size: 0.9rem;
@@ -119,13 +129,58 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
+        /* تحسينات للجوال */
         @media (max-width: 768px) {
+            header {
+                padding: 1.2rem 0;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+                padding: 0 10px;
+            }
+            
+            .subtitle {
+                font-size: 0.9rem;
+                padding: 0 10px;
+            }
+            
+            .pdf-header {
+                flex-direction: column;
+                padding: 0.8rem 0.5rem;
+            }
+            
+            .pdf-title {
+                font-size: 1rem;
+                margin-bottom: 0.8rem;
+            }
+            
             .pdf-viewer {
                 height: 400px;
             }
             
+            .download-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+            }
+            
+            main {
+                padding: 1.5rem 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
             h1 {
-                font-size: 1.8rem;
+                font-size: 1.4rem;
+            }
+            
+            .pdf-viewer {
+                height: 300px;
+            }
+            
+            footer {
+                padding: 1rem;
+                font-size: 0.8rem;
             }
         }
     </style>
